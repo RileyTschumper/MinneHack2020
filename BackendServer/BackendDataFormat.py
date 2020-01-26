@@ -21,6 +21,8 @@ class ArtworkData:
     artworkLocation = "" # Should this be string?
     # Features of artwork:
     artworkFeatures = None
+    # Relative location (within `images`) of image file:
+    artworkImage    = ""
     
     def __init__(self, artworkName, artistID):
         self.artworkName = artworkName
