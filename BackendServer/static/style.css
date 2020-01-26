@@ -22,20 +22,17 @@
      height: 100%;
      width: 100%;
 }
-video {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
+
  #camera, #camera--view, #camera--sensor, #camera--output{
      position: fixed;
      height: 100%;
      width: 100%;
      object-fit: cover;
 }
- #camera--view, #camera--sensor, #camera--output{
+/* #camera--view, #camera--sensor, #camera--output{
      transform: scaleX(-1);
      filter: FlipH;
-}
+}*/
  #camera--trigger{
      width: 200px;
      background-color: black;
