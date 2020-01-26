@@ -22,6 +22,10 @@
      height: 100%;
      width: 100%;
 }
+video {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
  #camera, #camera--view, #camera--sensor, #camera--output{
      position: fixed;
      height: 100%;
