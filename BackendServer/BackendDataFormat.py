@@ -35,7 +35,8 @@ class ArtworkData:
         self.artistID    = artistID
     
     def generateKeyPoints(self):
-        image = cv2.imread('../images/%s'%(self.artworkImage))
+        print("Generating key points for images/%s"%self.artworkImage)
+        image = cv2.imread('images/%s'%(self.artworkImage))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         sift = cv2.xfeatures2d.SIFT_create()

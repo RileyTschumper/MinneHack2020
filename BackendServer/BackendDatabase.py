@@ -11,11 +11,11 @@ class BackendDatabase:
         random.seed()
     
     def loadArtistJSON(self, jsonFile):
-        data = json.loads(jsonFile)
+        data = json.load(jsonFile)
         # TODO: Load JSON file and populate self.artists and self.artworks
 
     def loadArtworkJSON(self, jsonFile):
-        data = json.loads(jsonFile)
+        data = json.load(jsonFile)
         for rawArtwork in data:
             if not "artworkName" in rawArtwork:
                 rawArtwork["artworkName"] = "(unnamed)"
@@ -28,7 +28,7 @@ class BackendDatabase:
                 rawArtwork["artworkDate"] = "Undated"
             if not "artworkLocation" in rawArtwork:
                 rawArtwork["artworkLocation"] = "No location"
-            if not "artworkImage" in rawArtwork:
+            if not "imagePath" in rawArtwork:
                 print(" -- Artwork image file path must be defined!")
                 continue
 
@@ -36,7 +36,7 @@ class BackendDatabase:
             artwork.artworkID       = rawArtwork["artworkID"]
             artwork.artworkDate     = rawArtwork["artworkDate"]
             artwork.artworkLocation = rawArtwork["artworkLocation"]
-            artwork.artworkImage    = rawArtwork["artworkImage"]
+            artwork.artworkImage    = rawArtwork["imagePath"]
             artwork.generateKeyPoints()
 
             self.artworks.append(artwork)

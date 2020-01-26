@@ -1,7 +1,7 @@
 [
 	{
-		"artworkName":"Mona Lisa",
-		"artistID":0001,
-		"imagePath":"image/mona1.jpeg"
+		"artworkName": "Mona Lisa",
+		"artistID": 1,
+		"imagePath": "mona1.jpeg"
 	}
 ]
