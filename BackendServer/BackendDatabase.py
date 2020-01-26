@@ -21,7 +21,7 @@ class BackendDatabase:
 
         image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        plt.imshow(image),plt.show()
+        #plt.imshow(image),plt.show()
         sift = cv2.xfeatures2d.SIFT_create()
 
         keyPoints, descriptors = sift.detectAndCompute(image, None)
