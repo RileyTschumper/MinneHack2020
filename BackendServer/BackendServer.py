@@ -13,8 +13,11 @@ def init():
     flaskApp = Flask(__name__)
 
     database = BackendDatabase.BackendDatabase()
-    with open("JSON/data.json") as jsonFile:
+    with open("JSON/artworks.json") as jsonFile:
         database.loadArtworkJSON(jsonFile)
+    
+    with open("JSON/artists.json") as jsonFile:
+        database.loadArtistJSON(jsonFile)
 
     # Specifically handle root path:
     @flaskApp.route("/")

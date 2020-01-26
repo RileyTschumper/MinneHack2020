@@ -29,6 +29,8 @@ class ArtworkData:
     artworkDescriptors = None
     # Relative location (within `images`) of image file:
     artworkImage     = ""
+    # # of scans today, this week, and this month
+    scanHistory      = [ 0, 0, 0 ]
     
     def __init__(self, artworkName, artistID):
         self.artworkName = artworkName
