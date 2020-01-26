@@ -33,9 +33,16 @@ cameraTrigger.onclick = function() {
             data = JSON.parse(response);
 
             modal_waiting.style.display = "none";
-            content = document.createElement("p");
-            content.innerHTML = data.artworkName;
-            $("#art_info.modal-content").append(content);
+            content = document.createElement("div");
+            //content.innerHTML = data.artworkName;
+            
+            content.innerHTML =
+                  `<p><span class='info-label'>Title:</span><span class='info-text'>${data.artworkName}</span></p>`
+                + `<p><span class='info-label'>Artist:</span><span class='info-text'>${data.artistID}</span></p>`
+                + `<p><span class='info-label'>Date:</span><span class='info-text'>${data.artworkDate}</span></p>`
+                + `<p><span class='info-label'>Website:</span><span class='info-text'>${data.artistID}</span></p>`
+
+            $("#art_info .modal-content").append(content);
             modal.style.display = "block";
         } );
         cameraOutput.classList.add("taken");
