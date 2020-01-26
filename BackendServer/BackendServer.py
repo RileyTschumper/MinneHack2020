@@ -1,5 +1,8 @@
+import base64
+
 from flask import Flask, escape, request, send_from_directory, render_template
 from BackendServer import BackendDatabase
+
 
 flaskApp = None
 database = None
@@ -21,8 +24,17 @@ def init():
         #return send_from_directory('web', "index.html")
 
     @flaskApp.route("/scan")
-    def routeRoot():
+    def routeScan():
         return render_template('scan.html')
+            
+    @flaskApp.route('/postmethod', methods = ['POST'])
+    def get_post_javascript_data():
+        jsdata = request.form['javascript_data']
+        print(jsdata)
+        jsdata = jsdata.split(",")
+        image = base64.b64decode(jsdata[1])
+        database.findClosestMatch(self, image)
+        return jsdata
 
     # Serve all static web content:
     @flaskApp.route('/<path:path>')

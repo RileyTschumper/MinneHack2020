@@ -1,4 +1,5 @@
-onstraints = { video: { facingMode: "user" }, audio: false };
+
+constraints = { video: { facingMode: "user" }, audio: false };
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
         cameraOutput = document.querySelector("#camera--output"),
@@ -22,6 +23,9 @@ cameraTrigger.onclick = function() {
         cameraSensor.height = cameraView.videoHeight;
         cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
         cameraOutput.src = cameraSensor.toDataURL("image/webp");
+        $.post( "/postmethod", {
+            javascript_data:  cameraOutput.src
+        });
         cameraOutput.classList.add("taken");
 };
 // Start the video stream when the window loads
