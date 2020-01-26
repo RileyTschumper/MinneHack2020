@@ -20,6 +20,10 @@ def init():
         return render_template('index.html', info=info1)
         #return send_from_directory('web', "index.html")
 
+    @flaskApp.route("/scan")
+    def routeRoot():
+        return render_template('scan.html')
+
     # Serve all static web content:
     @flaskApp.route('/<path:path>')
     def sendStatic(path):
