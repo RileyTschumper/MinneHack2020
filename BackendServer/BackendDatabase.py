@@ -32,7 +32,7 @@ class BackendDatabase:
                 print(" -- Artwork image file path must be defined!")
                 continue
 
-            artwork = BackendDataFormat.ArtworkData(rawArtwork[artworkName], rawArtwork[artistID])
+            artwork = BackendDataFormat.ArtworkData(rawArtwork["artworkName"], rawArtwork["artistID"])
             artwork.artworkID       = rawArtwork["artworkID"]
             artwork.artworkDate     = rawArtwork["artworkDate"]
             artwork.artworkLocation = rawArtwork["artworkLocation"]
