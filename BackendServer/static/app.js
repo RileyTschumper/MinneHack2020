@@ -40,7 +40,7 @@ cameraTrigger.onclick = function() {
                   `<p><span class='info-label'>Title:</span><span class='info-text'>${data.artworkName}</span></p>`
                 + `<p><span class='info-label'>Artist:</span><span class='info-text'>${data.artistName}</span></p>`
                 + `<p><span class='info-label'>Date:</span><span class='info-text'>${data.artworkDate}</span></p>`
-                + `<p><span class='info-label'>Website:</span><a class='info-text' href=${data.artistWebsite}>${data.artistWebsite}</a></p>`
+                + `<p><a class='info-label' href=${data.artistWebsite}>Website</a></p>`
 
             $("#art_info .modal-content").append(content);
             modal.style.display = "block";
