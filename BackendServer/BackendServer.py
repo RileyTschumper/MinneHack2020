@@ -68,4 +68,4 @@ def init():
 def start():
     global flaskApp
 
-    flaskApp.run(host="0.0.0.0", ssl_context='adhoc')
+    flaskApp.run(host="0.0.0.0", ssl_context='adhoc', threaded=True)
