@@ -24,7 +24,8 @@ def init():
     @flaskApp.route("/")
     def routeRoot():
         info1 = {"artworkName": "Testing", "artistName": "Riley T", "website": "www.rileyt.com", "numScans": 15}
-        return render_template('index.html', info=info2, top_artworks=database.artworks, artists=database.artists)
+        #return render_template('index.html', info=info1, top_artworks=database.artworks, artists=database.artists)
+        return render_template('index.html', info=info1)
         #return send_from_directory('web', "index.html")
 
     @flaskApp.route("/scan")

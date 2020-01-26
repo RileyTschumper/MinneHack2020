@@ -53,6 +53,7 @@ class ArtworkData:
         sift = cv2.xfeatures2d.SIFT_create()
 
         self.artworkKeyPoints, self.artworkDescriptors = sift.detectAndCompute(image, None)
+        print(" -- Done")
 
     def compareKeyPoints(self, otherImage):
         image = cv2.imdecode(otherImage,cv2.IMREAD_COLOR)
