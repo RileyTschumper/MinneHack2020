@@ -2,11 +2,16 @@ from flask import Flask, escape, request, send_from_directory, render_template
 from BackendServer import BackendDatabase
 
 flaskApp = None
+database = None
 
 def init():
     global flaskApp
 
     flaskApp = Flask(__name__)
+
+    database = BackendDatabase.BackendDatabase()
+    with open("JSON/data.json") as jsonFile:
+        database.loadArtworkJSON(jsonFile)
 
     # Specifically handle root path:
     @flaskApp.route("/")
