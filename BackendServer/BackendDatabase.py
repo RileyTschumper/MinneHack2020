@@ -1,5 +1,8 @@
 import json
 import random
+import numpy as np
+import base64
+import cv2
 
 from BackendServer import BackendDataFormat
 
@@ -11,15 +14,18 @@ class BackendDatabase:
         random.seed()
     
     def findClosestMatch(self, image):
+        encoded_data = image.split(',')[1]
+        nparr = np.fromstring(base64.b64decode(encoded_data), np.uint8)
+        #img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         maxSoFar = 0
         for artwork in self.artworks:
-            curr = artwork.compareKeyPoints(image)
+            curr = artwork.compareKeyPoints(nparr)
             if curr > maxSoFar:
                 maxSoFar = curr
                 bestArtwork = artwork
-        if maxSoFar < 10
+        if maxSoFar < 10:
             return None
-        else
+        else:
             return artwork.generateJSON()
         
 
