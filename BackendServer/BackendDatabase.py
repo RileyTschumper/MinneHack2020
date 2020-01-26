@@ -44,11 +44,23 @@ class BackendDatabase:
                 print(" -- Artwork image file path must be defined!")
                 continue
 
+            if not "scansToday" in rawArtwork:
+                rawArtwork["scansToday"] = 0
+            if not "scansThisWeek" in rawArtwork:
+                rawArtwork["scansThisWeek"] = 0
+            if not "scansThisMonth" in rawArtwork:
+                rawArtwork["scansThisMonth"] = 0
+
             artwork = BackendDataFormat.ArtworkData(rawArtwork["artworkName"], rawArtwork["artistID"])
             artwork.artworkID       = rawArtwork["artworkID"]
             artwork.artworkDate     = rawArtwork["artworkDate"]
             artwork.artworkLocation = rawArtwork["artworkLocation"]
             artwork.artworkImage    = rawArtwork["imagePath"]
+            artwork.scanHistory     = [
+                rawArtwork["scansToday"],
+                rawArtwork["scansThisWeek"],
+                rawArtwork["scansThisMonth"]
+            ]
             artwork.generateKeyPoints()
 
             self.artworks.append(artwork)
