@@ -50,7 +50,7 @@ cameraTrigger.onclick = function() {
 };
 
 closeBtn.onclick = function(){
-    $("#art_info .modal-content").empty();
+    $("#art_info .modal-content").children().remove("div");
     modal.style.display = "none";
 }
 // Start the video stream when the window loads
