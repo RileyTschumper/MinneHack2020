@@ -67,7 +67,7 @@ class ArtworkData:
         for m,n in matches:
             if m.distance < 0.6 * n.distance:
                 good_points.append(m)
-        print(good_points)
+        #print(good_points)
         return len(good_points)
 
     def generateJSON(self):
