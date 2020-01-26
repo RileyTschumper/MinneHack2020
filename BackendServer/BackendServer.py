@@ -1,4 +1,5 @@
 from flask import Flask, escape, request, send_from_directory
+#import BackendDatabase
 
 flaskApp = None
 
@@ -14,6 +15,10 @@ def init():
     @flaskApp.route('/<path:path>')
     def sendStatic(path):
         return send_from_directory('web', path)
+    
+    @flaskApp.route('/image/<path:path>')
+    def sendStaticImage(path):
+        return send_from_directory('../images', path)
 
     @flaskApp.route("/api/artist/<string:artistID>", methods=["GET"])
     def routeArtist(artistID):
