@@ -1,4 +1,5 @@
 import cv2
+import json
 
 class ArtistData:
     # Full name of artist:
@@ -67,3 +68,16 @@ class ArtworkData:
             if m.distance < 0.6 * n.distance:
                 good_points.append(m)
         return len(good_points)
+
+    def generateJSON(self):
+        return json.dumps({
+            "artworkID": self.artworkID,
+            "artistID":  self.artistID,
+            "artworkName": self.artworkName,
+            "artworkLocation": self.artworkLocation,
+            "imagePath": self.artworkImage,
+
+            "scansToday": self.scanHistory[0],
+            "scansThisWeek": self.scanHistory[1],
+            "scansThisMonth": self.scanHistory[2]
+        })
