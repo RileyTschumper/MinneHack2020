@@ -1,13 +1,9 @@
 import cv2 
 import matplotlib.pyplot as plt
-#%matplotlib inline
 
-#from IPython import get_ipython
-#get_ipython().run_line_magic('matplotlib', 'inline')
-#exec(%matplotlib inline)
 # read images
 img1 = cv2.imread('images/mona1.jpeg')  
-img2 = cv2.imread('images/mona2.jpeg') 
+img2 = cv2.imread('images/randomart1.jpeg') 
 
 img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
@@ -21,8 +17,26 @@ keypoints_2, descriptors_2 = sift.detectAndCompute(img2,None)
 #feature matching
 bf = cv2.BFMatcher(cv2.NORM_L1, crossCheck=True)
 
-matches = bf.match(descriptors_1,descriptors_2)
-matches = sorted(matches, key = lambda x:x.distance)
 
-img3 = cv2.drawMatches(img1, keypoints_1, img2, keypoints_2, matches[:50], img2, flags=2)
+index_params = dict(algorithm = 0, trees = 5)
+search_params = dict()
+
+flann = cv2.FlannBasedMatcher(index_params, search_params)
+
+matches = flann.knnMatch(descriptors_1,descriptors_2, k=2)
+#matches = sorted(matches, key = lambda x:x.distance)
+
+
+good_points = []
+for m,n in matches:
+    if m.distance < 0.6 *n.distance:
+        good_points.append(m)
+
+print("keypoints_1: ", len(keypoints_1))
+print("keypoints_2: ", len(keypoints_2))
+
+
+print("matches: ", len(matches))
+print("good matches: ", len(good_points))
+img3 = cv2.drawMatches(img1, keypoints_1, img2, keypoints_2, good_points, None)
 plt.imshow(img3),plt.show()
