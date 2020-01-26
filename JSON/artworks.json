@@ -1,0 +1,9 @@
+[
+	{
+		"artworkID": 1,
+		"artistID": 1,
+		"artworkName": "Mona Lisa",
+		"artworkLocation": "The Louvre Museum, Paris",
+		"imagePath": "mona1.jpeg"
+	}
+]

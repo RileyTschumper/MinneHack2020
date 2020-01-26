@@ -10,8 +10,11 @@ def init():
     flaskApp = Flask(__name__)
 
     database = BackendDatabase.BackendDatabase()
-    with open("JSON/data.json") as jsonFile:
+    with open("JSON/artworks.json") as jsonFile:
         database.loadArtworkJSON(jsonFile)
+    
+    with open("JSON/artists.json") as jsonFile:
+        database.loadArtistJSON(jsonFile)
 
     # Specifically handle root path:
     @flaskApp.route("/")
@@ -21,7 +24,7 @@ def init():
         #return send_from_directory('web', "index.html")
 
     @flaskApp.route("/scan")
-    def routeRoot():
+    def routeScan():
         return render_template('scan.html')
 
     # Serve all static web content:

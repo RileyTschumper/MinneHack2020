@@ -12,7 +12,19 @@ class BackendDatabase:
     
     def loadArtistJSON(self, jsonFile):
         data = json.load(jsonFile)
-        # TODO: Load JSON file and populate self.artists and self.artworks
+        for rawArtist in data:
+            if not "artistName" in rawArtist:
+                rawArtist["artistName"] = "Unnamed artist"
+            if not "artistSite" in rawArtist:
+                rawArtist["artistSite"] = ""
+            if not "artistID" in rawArtist:
+                print(" -- artistID must be defined! --")
+                continue
+            
+            artist = BackendDataFormat.ArtistData(rawArtist["artistName"], rawArtist["artistID"])
+            artist.artistSite = rawArtist["artistSite"]
+
+            self.artists.append(artist)
 
     def loadArtworkJSON(self, jsonFile):
         data = json.load(jsonFile)
