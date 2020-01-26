@@ -75,7 +75,6 @@
   padding: 20px; 
   margin: auto; 
   width: 75%;
-  min-height: 85vh;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
