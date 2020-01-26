@@ -17,6 +17,9 @@ function cameraStart() {
                     console.error("Oops. Something is broken.", error);
                 });
 }
+
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
         cameraSensor.width = cameraView.videoWidth;
@@ -25,8 +28,15 @@ cameraTrigger.onclick = function() {
         cameraOutput.src = cameraSensor.toDataURL("image/webp");
         $.post( "/postmethod", {
             javascript_data:  cameraOutput.src
-        }).done(function(response) { console.log(response); } );
+        }).done(function(response) { 
+            console.log(response);
+            modal.style.display = "block";
+        } );
         cameraOutput.classList.add("taken");
 };
+
+closeBtn.onclick = function(){
+    modal.style.display = "none";
+}
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
