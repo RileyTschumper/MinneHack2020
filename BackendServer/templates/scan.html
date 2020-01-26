@@ -6,7 +6,7 @@
                         <!-- Name of your awesome camera app -->
                             <title>Camera App</title>
                                 <!-- Link to your main style sheet-->
-                                    <link rel="stylesheet" href="style.css">
+                                <link rel="stylesheet" href="{{url_for('static',filename:'style.css')}}">
     </head>
     <body>
             <!-- Camera -->
@@ -21,6 +21,6 @@
                                                                                     <button id="camera--trigger">Take a picture</button>
                                                                                         </main>
                                                                                             <!-- Reference to your JavaScript file -->
-                                                                                                <script src="app.js"></script>
+                                                                                                <script src="{{url_for('static',filename:'app.js')}}"></script>
     </body>
 </html>
