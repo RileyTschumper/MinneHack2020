@@ -62,7 +62,7 @@
   display: none;
   position: fixed; 
   padding-top: 50px;
-  min-height: 75%;
+  min-height: 75vh;
   left: 0; 
   top: 0;
   width: 100%;
