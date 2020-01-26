@@ -18,15 +18,17 @@ class BackendDatabase:
         nparr = np.fromstring(base64.b64decode(encoded_data), np.uint8)
         #img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         maxSoFar = 0
+        print(self.artworks)
         for artwork in self.artworks:
             curr = artwork.compareKeyPoints(nparr)
+            print(curr)
             if curr > maxSoFar:
                 maxSoFar = curr
                 bestArtwork = artwork
         if maxSoFar < 10:
             return None
         else:
-            return artwork.generateJSON()
+            return bestArtwork.generateJSON()
         
 
     def loadArtistJSON(self, jsonFile):

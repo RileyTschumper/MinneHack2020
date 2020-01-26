@@ -9,5 +9,17 @@
 		"scansToday": 5,
 		"scansThisWeek": 73,
 		"scansThisMonth": 342
-	}
+	},
+    {
+        "artworkID": 2,
+		"artistID": 2,
+		"artworkName": "Riley",
+		"artworkLocation": "The Louvre Museum, Paris",
+		"imagePath": "riley.jpg",
+
+		"scansToday": 5,
+		"scansThisWeek": 73,
+		"scansThisMonth": 342
+
+    }
 ]

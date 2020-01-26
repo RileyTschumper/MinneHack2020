@@ -52,7 +52,7 @@ class ArtworkData:
 
         sift = cv2.xfeatures2d.SIFT_create()
 
-        self.artworkKeyPoints, artworkDescriptors = sift.detectAndCompute(image, None)
+        self.artworkKeyPoints, self.artworkDescriptors = sift.detectAndCompute(image, None)
 
     def compareKeyPoints(self, otherImage):
         image = cv2.imdecode(otherImage,cv2.IMREAD_COLOR)
@@ -75,6 +75,7 @@ class ArtworkData:
         for m,n in matches:
             if m.distance < 0.6 * n.distance:
                 good_points.append(m)
+        print(good_points)
         return len(good_points)
 
     def generateJSON(self):
