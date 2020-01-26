@@ -45,5 +45,16 @@
 		"scansToday": 9,
 		"scansThisWeek": 91,
 		"scansThisMonth": 376
+    },
+    {
+        "artwork":5,
+        "artistID": 4,
+		"artworkName": "Front of First Ave",
+		"artworkLocation": "First Ave, Minneapolis, MN",
+		"imagePath": "firstavefront.jpg",
+
+		"scansToday": 2,
+		"scansThisWeek": 9,
+		"scansThisMonth": 24
     }
 ]
