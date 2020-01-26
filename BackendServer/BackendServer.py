@@ -1,4 +1,4 @@
-from flask import Flask, escape, request, send_from_directory
+from flask import Flask, escape, request, send_from_directory, render_template
 #import BackendDatabase
 
 flaskApp = None
@@ -10,7 +10,8 @@ def init():
 
     @flaskApp.route("/")
     def routeRoot():
-        return send_from_directory('web', "index.html")
+        return render_template('index.html', name="Riley")
+        #return send_from_directory('web', "index.html")
 
     @flaskApp.route('/<path:path>')
     def sendStatic(path):
