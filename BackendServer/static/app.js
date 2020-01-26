@@ -17,9 +17,9 @@ function cameraStart() {
                     console.error("Oops. Something is broken.", error);
                 });
 }
-
-let modal = document.querySelector(".modal")
-let closeBtn = document.querySelector(".close-btn")
+let modal_waiting = document.querySelector(".modal_waiting");
+let modal = document.querySelector(".modal");
+let closeBtn = document.querySelector(".close-btn");
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
         cameraSensor.width = cameraView.videoWidth;
@@ -30,9 +30,14 @@ cameraTrigger.onclick = function() {
             javascript_data:  cameraOutput.src
         }).done(function(response) { 
             console.log(response);
+            modal_waiting.style.display = "none";
+            content = document.createElement("p");
+            content.innerHTML = response.artworkName;
+            modal.appendChild(content);
             modal.style.display = "block";
         } );
         cameraOutput.classList.add("taken");
+        modal_waiting.style.display = "block";
 };
 
 closeBtn.onclick = function(){
