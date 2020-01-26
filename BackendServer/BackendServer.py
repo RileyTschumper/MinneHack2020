@@ -36,7 +36,7 @@ def init():
         print(jsdata)
         jsdata = jsdata.split(",")
         image = base64.b64decode(jsdata[1])
-        database.findClosestMatch(self, image)
+        database.findClosestMatch(image)
         return jsdata
 
     # Serve all static web content:
