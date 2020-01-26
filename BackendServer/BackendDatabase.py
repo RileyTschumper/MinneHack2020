@@ -10,6 +10,19 @@ class BackendDatabase:
     def __init__(self):
         random.seed()
     
+    def findClosestMatch(self, image):
+        maxSoFar = 0
+        for artwork in self.artworks:
+            curr = artwork.compareKeyPoints(image)
+            if curr > maxSoFar:
+                maxSoFar = curr
+                bestArtwork = artwork
+        if maxSoFar < 10
+            return None
+        else
+            return artwork.generateJSON()
+        
+
     def loadArtistJSON(self, jsonFile):
         data = json.load(jsonFile)
         for rawArtist in data:
