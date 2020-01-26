@@ -101,9 +101,13 @@
 
 
 .info-label {
+  font-family: "Lucida Console", Monaco, monospace;
   font-weight: bold;
+  font-size: 16pt;
 }
 
 .info-text {
+  font-family: "Lucida Console", Monaco, monospace;
   font-weight: normal;
+  font-size: 16pt;
 }

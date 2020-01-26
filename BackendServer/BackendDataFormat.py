@@ -80,6 +80,7 @@ class ArtworkData:
             "artistID":  self.artistID,
             "artistName":  self.artistName,
             "artistWebsite":  self.artistWebsite,
+            "artworkDate": self.artworkDate,
             "artworkName": self.artworkName,
             "artworkLocation": self.artworkLocation,
             "imagePath": self.artworkImage,
