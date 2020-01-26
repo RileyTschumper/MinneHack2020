@@ -11,6 +11,8 @@ class ArtistData:
         self.artistID   = artistID
 
 class ArtworkData:
+    # UUID of artwork:
+    artworkID       = ""
     # Name of artwork:
     artworkName     = ""
     # UUID of artist:
