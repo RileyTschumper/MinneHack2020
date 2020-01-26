@@ -3,16 +3,23 @@ import json
 import matplotlib.pyplot as plt
 
 class ArtistData:
+    # UUID of artist
+    artistID   = ""
     # Full name of artist:
     artistName = ""
     # URL of artist's web site
     artistSite = ""
-    # UUID of artist
-    artistID   = ""
 
     def __init__(self, artistName, artistID):
         self.artistName = artistName
         self.artistID   = artistID
+
+    def generateJSON(self):
+        return json.dumps({
+            "artistID":   self.artistID,
+            "artistName": self.artistName,
+            "artistSite": self.artistSite
+        })
 
 class ArtworkData:
     # UUID of artwork:
