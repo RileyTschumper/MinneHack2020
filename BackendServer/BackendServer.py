@@ -35,7 +35,7 @@ def init():
     @flaskApp.route('/postmethod', methods = ['POST'])
     def get_post_javascript_data():
         jsdata = request.form['javascript_data']
-        print(jsdata)
+        #print(jsdata)
         #jsdata = jsdata.split(",")
         response = database.findClosestMatch(jsdata)
         #image = io.BytesIO(base64.b64decode(jsdata[1]))
@@ -44,7 +44,7 @@ def init():
         if response == None:
             return "Something"
         else:
-            print(response)
+            #print(response)
             return response
 
     # Serve all static web content:

@@ -3,6 +3,7 @@ import random
 import numpy as np
 import base64
 import cv2
+import matplotlib.pyplot as plt
 
 from BackendServer import BackendDataFormat
 
@@ -13,14 +14,22 @@ class BackendDatabase:
     def __init__(self):
         random.seed()
     
-    def findClosestMatch(self, image):
-        encoded_data = image.split(',')[1]
+    def findClosestMatch(self, imageURI):
+        encoded_data = imageURI.split(',')[1]
         nparr = np.fromstring(base64.b64decode(encoded_data), np.uint8)
         #img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        plt.imshow(image),plt.show()
+        sift = cv2.xfeatures2d.SIFT_create()
+
+        keyPoints, descriptors = sift.detectAndCompute(image, None)
+
         maxSoFar = 0
-        print(self.artworks)
+        #print(self.artworks)
         for artwork in self.artworks:
-            curr = artwork.compareKeyPoints(nparr)
+            curr = artwork.compareKeyPoints(descriptors)
             print(curr)
             if curr > maxSoFar:
                 maxSoFar = curr

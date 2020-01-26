@@ -55,16 +55,7 @@ class ArtworkData:
         self.artworkKeyPoints, self.artworkDescriptors = sift.detectAndCompute(image, None)
         print(" -- Done")
 
-    def compareKeyPoints(self, otherImage):
-        image = cv2.imdecode(otherImage,cv2.IMREAD_COLOR)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        plt.imshow(image),plt.show()
-        sift = cv2.xfeatures2d.SIFT_create()
-
-        keyPoints, descriptors = sift.detectAndCompute(image, None)
-
-        bf = cv2.BFMatcher(cv2.NORM_L1, crossCheck=True)
-
+    def compareKeyPoints(self, descriptors):
         index_params = dict(algorithm = 0, trees = 5)
         search_params = dict()
 
