@@ -58,3 +58,9 @@ class ArtworkData:
         flann = cv2.FlannBasedMatcher(index_params, search_params)
 
         matches = flann.knnMatch(self.artworkDescriptors, descriptors, k=2)
+        # Find good points
+        good_points = []
+        for m,n in matches:
+            if m.distance < 0.6 * n.distance:
+                good_points.append(m)
+        return len(good_points)
