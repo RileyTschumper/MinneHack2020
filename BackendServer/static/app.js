@@ -1,5 +1,5 @@
 
-constraints = { video: { facingMode: "user" }, audio: false };
+constraints = { video: { facingMode: "environment" }, audio: false };
 // Define constants
 const cameraView = document.querySelector("#camera--view"),
         cameraOutput = document.querySelector("#camera--output"),

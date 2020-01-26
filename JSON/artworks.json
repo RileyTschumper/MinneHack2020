@@ -21,5 +21,29 @@
 		"scansThisWeek": 73,
 		"scansThisMonth": 342
 
+    },
+    {
+
+        "artworkID": 3,
+		"artistID": 3,
+		"artworkName": "Fauna & Flora",
+		"artworkLocation": "Flynn Hall",
+		"imagePath": "faunaandflora.jpg",
+
+		"scansToday": 3,
+		"scansThisWeek": 34,
+		"scansThisMonth": 87
+    },
+    {
+
+        "artworkID": 4,
+		"artistID": 4,
+		"artworkName": "First Ave News",
+		"artworkLocation": "First Ave, Minneapolis, MN",
+		"imagePath": "firstavenue.jpg",
+
+		"scansToday": 9,
+		"scansThisWeek": 91,
+		"scansThisMonth": 376
     }
 ]
