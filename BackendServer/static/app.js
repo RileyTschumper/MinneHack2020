@@ -17,8 +17,8 @@ function cameraStart() {
                     console.error("Oops. Something is broken.", error);
                 });
 }
-let modal_waiting = document.querySelector(".modal_waiting");
-let modal = document.querySelector(".modal");
+let modal_waiting = document.querySelector("#waiting");
+let modal = document.querySelector("#art_info");
 let closeBtn = document.querySelector(".close-btn");
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
@@ -35,7 +35,7 @@ cameraTrigger.onclick = function() {
             modal_waiting.style.display = "none";
             content = document.createElement("p");
             content.innerHTML = data.artworkName;
-            $(".modal-content").append(content);
+            $("#art_info.modal-content").append(content);
             modal.style.display = "block";
         } );
         cameraOutput.classList.add("taken");
@@ -43,6 +43,7 @@ cameraTrigger.onclick = function() {
 };
 
 closeBtn.onclick = function(){
+    $("#art_info.modal-content").children().remove();
     modal.style.display = "none";
 }
 // Start the video stream when the window loads

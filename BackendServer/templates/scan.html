@@ -23,13 +23,13 @@
         </main>
         <!-- Reference to your JavaScript file -->
         <script src="{{url_for('static',filename='app.js')}}"></script>
-        <div class="modal">
+        <div class="modal" id="art_info">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
                 <p>Request complete<p>
             </div>
         </div>
-        <div class="modal_waiting">
+        <div class="modal" id="waiting">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
                 <p>Analyzing picture...<p>
