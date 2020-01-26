@@ -30,10 +30,12 @@ cameraTrigger.onclick = function() {
             javascript_data:  cameraOutput.src
         }).done(function(response) { 
             console.log(response);
+            data = JSON.parse(response);
+
             modal_waiting.style.display = "none";
             content = document.createElement("p");
-            content.innerHTML = response.artworkName;
-            modal.appendChild(content);
+            content.innerHTML = data.artworkName;
+            $(".modal-content").append(content);
             modal.style.display = "block";
         } );
         cameraOutput.classList.add("taken");
