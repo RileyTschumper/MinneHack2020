@@ -2,6 +2,8 @@
 	{
 		"artworkID": 1,
 		"artistID": 1,
+		"artistName": "Leonardo da Vinci",
+		"artistWebsite": "https://en.wikipedia.org/wiki/Leonardo_da_Vinci",
 		"artworkName": "Mona Lisa",
 		"artworkLocation": "The Louvre Museum, Paris",
 		"imagePath": "mona1.jpeg",
@@ -13,6 +15,8 @@
     {
         "artworkID": 2,
 		"artistID": 2,
+		"artistName": "Riley Tschumper",
+		"artistWebsite": "https://github.com/RileyTschumper",
 		"artworkName": "Riley",
 		"artworkLocation": "The Louvre Museum, Paris",
 		"imagePath": "riley.jpg",
@@ -26,6 +30,8 @@
 
         "artworkID": 3,
 		"artistID": 3,
+		"artistName": "Mitchell Nelson",
+		"artistWebsite": "https://nels4929.github.io",
 		"artworkName": "Fauna & Flora",
 		"artworkLocation": "Flynn Hall",
 		"imagePath": "faunaandflora.jpg",
@@ -38,6 +44,8 @@
 
         "artworkID": 4,
 		"artistID": 4,
+		"artistName": "Chris Riemenschneider",
+		"artistWebsite": "https://first-avenue.com/performer/chris-riemenschneider",
 		"artworkName": "First Ave News",
 		"artworkLocation": "First Ave, Minneapolis, MN",
 		"imagePath": "firstavenue.jpg",
@@ -49,6 +57,8 @@
     {
         "artwork":5,
         "artistID": 4,
+        "artistName": "Chris Riemenschneider",
+		"artistWebsite": "https://first-avenue.com/performer/chris-riemenschneider",
 		"artworkName": "Front of First Ave",
 		"artworkLocation": "First Ave, Minneapolis, MN",
 		"imagePath": "firstavefront.jpg",

@@ -28,6 +28,10 @@ class ArtworkData:
     artworkName      = ""
     # UUID of artist:
     artistID         = ""
+    # UUID of artist:
+    artistName       = ""
+    # UUID of artist:
+    artistWebsite    = ""
     # Date of creation:
     artworkDate      = ""
     # Location of artwork:
@@ -74,6 +78,8 @@ class ArtworkData:
         return json.dumps({
             "artworkID": self.artworkID,
             "artistID":  self.artistID,
+            "artistName":  self.artistName,
+            "artistWebsite":  self.artistWebsite,
             "artworkName": self.artworkName,
             "artworkLocation": self.artworkLocation,
             "imagePath": self.artworkImage,

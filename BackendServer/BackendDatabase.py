@@ -83,6 +83,8 @@ class BackendDatabase:
 
             artwork = BackendDataFormat.ArtworkData(rawArtwork["artworkName"], rawArtwork["artistID"])
             artwork.artworkID       = rawArtwork["artworkID"]
+            artwork.artistName      = rawArtwork["artistName"]
+            artwork.artistWebSite   = rawArtwork["artistWebSite"]
             artwork.artworkDate     = rawArtwork["artworkDate"]
             artwork.artworkLocation = rawArtwork["artworkLocation"]
             artwork.artworkImage    = rawArtwork["imagePath"]
