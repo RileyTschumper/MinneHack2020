@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <head>
     <title>WIP</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	<h1>{{ name }}</h1>
+	<h1>Most Scans</h1>
+	<div class="row">
+		<div class="column">
+			<div class="card">
+                <div class="image_container">
+                    <img style="max-height:100px;" src="{{url_for('static', filename='dog.jpeg')}}" />
+                </div>
+                <div class="artwork_info">
+                    <p><strong>Artwork Title:</strong>{{ info.artworkName }}</p>
+                    <p><strong>Artist:</strong>{{ info.artistName }}</p>
+                    <p><strong>Website:</strong>{{ info.website}}</p>
+                    <p><strong>Number of Scans:</strong> {{ info.numScans }}</p>
+			</div>
+		</div>
+	</div>
 </body>

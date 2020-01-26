@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 from flask import Flask, escape, request, send_from_directory, render_template
-#import BackendDatabase
-=======
-from flask import Flask, escape, request, send_from_directory
 from BackendServer import BackendDatabase
->>>>>>> f7c66a6a942873ab974dac80c2c74bd1e69c0b30
 
 flaskApp = None
 
@@ -16,7 +11,8 @@ def init():
     # Specifically handle root path:
     @flaskApp.route("/")
     def routeRoot():
-        return render_template('index.html', name="Riley")
+        info1 = {"artworkName": "Testing", "artistName": "Riley T", "website": "www.rileyt.com", "numScans": 15}
+        return render_template('index.html', info=info1)
         #return send_from_directory('web', "index.html")
 
     # Serve all static web content:
