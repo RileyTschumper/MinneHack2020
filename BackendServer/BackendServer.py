@@ -23,8 +23,7 @@ def init():
     # Specifically handle root path:
     @flaskApp.route("/")
     def routeRoot():
-        info1 = {"artworkName": "Testing", "artistName": "Riley T", "website": "www.rileyt.com", "numScans": 15}
-        return render_template('index.html', info=info1)
+        return render_template('index.html', top_artworks=database.artworks)
         #return send_from_directory('web', "index.html")
 
     @flaskApp.route("/scan")
@@ -67,4 +66,4 @@ def init():
 def start():
     global flaskApp
 
-    flaskApp.run()
+    flaskApp.run(host="0.0.0.0", ssl_context='adhoc')
