@@ -2,7 +2,8 @@
 MinneHack 2020 3rd place winner
 
 ## Demo Video
-https://www.youtube.com/watch?v=MC2t7IUA2lI&feature=emb_title
+[![Watch the Video](https://img.youtube.com/vi/MC2t7IUA2lI/0.jpg)](https://www.youtube.com/watch?v=MC2t7IUA2lI&feature=emb_title)
+
 
 ## Inspiration
 Hackathon prompt: "Develop a solution for local communities to help them foster social good"
